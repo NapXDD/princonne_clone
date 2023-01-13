@@ -1,0 +1,64 @@
+.mainInner{
+    position: relative;
+    z-index: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .middleADs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2{
+        position: absolute;
+        top: 25%;
+        right: 50px;
+    }
+    
+    .top_banner{
+        position: absolute;
+
+    }
+
+    p.btn_text{
+        position: absolute;
+        bottom: 170px;
+        right: 20px;        
+    }
+}
+
+ul.top_banner{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    position: absolute;
+    width: 490px;
+    overflow: hidden;
+    left: 20px;
+    bottom: 10px;
+    gap: 8px;
+
+    
+    li .banner_Card a img{
+        width: 240px;
+        border-radius: 5px;
+    }
+}
+
+ul.btn_store{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    list-style: none;
+
+    li .btn_Card a img{
+
+    }
+}
+
+

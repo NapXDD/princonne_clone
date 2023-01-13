@@ -1,0 +1,60 @@
+.container{
+    position: fixed;
+    background-color: #fff;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.navContent{
+    width: 100vw;
+    height: auto;
+}
+
+.navList{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    align-items: center;
+    font-size: 14px;
+
+    li{
+        padding: 10px 10px;
+        a{
+            color: #2c94e4;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover{
+            color: #6abeff;
+        }
+    }
+
+    .navYoutube{
+        a{
+            color: red;
+        }
+
+        a:hover{
+            color: rgb(255, 119, 119);
+        }
+    }
+
+    .navTwitter{
+        a{
+            color: #2c94e4;
+        }
+
+        a:hover{
+            color: #6abeff;
+        }
+    }
+}
+
+.youtube-icon{
+    font-size: 25px;
+}
+
+.twitter-icon{
+    font-size: 25px;
+}
