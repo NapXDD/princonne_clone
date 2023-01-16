@@ -3,19 +3,23 @@ import "./App.css";
 import NavBar from "./component/navbar/NavBar";
 import SessionOne from "./component/session/session1/SessionOne";
 import SessionTwo from "./component/session/session2/SessionTwo";
+import SessionThree from "./component/session/session3/SessionThree";
+import SessionFour from "./component/session/session4/SessionFour"
 import YoutubeVideoPlayer from "./component/session/youtube/youtubeVideoPlayer";
 
-function App() {
-  let pagePosition = 0;
-  const scrollSession = useRef();
-  //let [scrollState, setScrollState] = useState(0);
-  let offSet = 0;
+let offSet = 0;
+let pagePosition = 0
 
+function App() {
+  
+  const scrollSession = useRef();
+  //let [pagePosition, setPagePosition] = useState(0)
+  
   const checkPage = () => {
     if (pagePosition <= 0) {
-      pagePosition = 0;
+      pagePosition = 0
     } else if (pagePosition >= 3) {
-      pagePosition = 3;
+      pagePosition = 3
     }
   };
 
@@ -23,57 +27,50 @@ function App() {
   const RECHARGE_TIME = 1500;
 
   function changeSession() {
-    let offSet = 0;
+    
+    //reading a height off a session to translate3d
+    let rootHeight = scrollSession.current.clientHeight/4
+
     //when scrollup
     if (event.deltaY < 0) {
       console.log("scroll up");
       //check pagePosition section
-      pagePosition--;
+      //setPagePosition(pagePosition--);
+      pagePosition--
       checkPage();
-      console.log(scrollSession);
       switch (pagePosition) {
         case 0:
-          scrollSession.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          console.log(scrollSession.current.style);
+          offSet = 0
+          scrollSession.current.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
           break;
         case 1:
-          offSet = scrollSession.offsetHeight;
-          scrollSession.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          console.log(scrollSession.current.style);
+          offSet = rootHeight;
+          scrollSession.current.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
           break;
         case 2:
-          offSet = scrollSession.offsetHeight * 2;
-          scrollSession.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          console.log(scrollSession.current.style);
+          offSet = rootHeight * 2;
+          scrollSession.current.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
           break;
       }
     }
     //when scrolldown
     else {
       console.log("scroll down");
-      pagePosition++;
+      //setPagePosition(pagePosition++);
+      pagePosition++
       checkPage();
-      console.log(pagePosition);
       switch (pagePosition) {
         case 1:
-          offSet = scrollSession.current.style.offsetHeight;
-          console.log(offSet);
+          offSet = rootHeight;
           scrollSession.current.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          //scrollSession.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
           break;
         case 2:
-          offSet = scrollSession.current.style.offsetHeight * 2;
-          //scrollSession.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          console.log(scrollSession.current);
+          offSet = rootHeight * 2;
           scrollSession.current.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          console.log(scrollSession.current.style.transform);
           break;
         case 3:
-          offSet = scrollSession.current.style.offsetHeight * 3;
-          //scrollSession.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          console.log(scrollSession.current.style);
+          offSet = rootHeight * 3;
           scrollSession.current.style.transform = `translate3d(0px, -${offSet}px, 0px)`;
-          console.log(scrollSession.current.style.transform);
           break;
       }
     }
@@ -94,7 +91,7 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("wheel", throttledListener);
-    //console.log(scrollSession)
+    //return() => removeEventListener("wheel", throttledListener)
   }, []);
 
   return (
@@ -106,6 +103,8 @@ function App() {
       <div className="wrapper" ref={scrollSession}>
         <SessionOne />
         <SessionTwo />
+        <SessionThree />
+        <SessionFour />
       </div>
     </div>
   );

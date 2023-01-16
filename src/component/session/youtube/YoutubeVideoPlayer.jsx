@@ -6,27 +6,6 @@ let offsetX = "1495px";
 
 //create a script to get the iframe player api
 
-//create a player to create a iframe
-//let player;
-
-//execute function when the API read
-// function onYouTubeIframeAPIReady() {
-//     player = new YT.Player('player', {
-//     videoId: 'f56t72sfe-Q',
-//     playerVars: {
-//         'modestbranding': 1,
-//         'autoplay': 0,
-//         'controls': 0,
-//         'showinfo': 0,
-//         'rel': 0,
-//     },
-//     events: {
-//         onReady: onPlayerReady
-//     }
-//     });
-// }
-
-
 
 function YoutubeVideoPlayer(){
     //play the video when its ready

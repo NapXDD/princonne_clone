@@ -1,4 +1,4 @@
-import s from "./SessionTwo.module.scss"
+import s from "./SessionFour.module.scss"
 
 function SessionTwo(){
     return(
