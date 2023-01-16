@@ -5,7 +5,7 @@
 
 .wrapper{
     position: relative;
-    transition: transform 1.5s ease;
+    transition: transform 1s ease-out;
 }
 
 .youtube-wrapper{

@@ -1,16 +1,9 @@
 import { useEffect } from "react"
 import YouTube from 'react-youtube';
 
-const root = document.getElementsByTagName("BODY")[0];
-let offsetX = "1495px";
-
-//create a script to get the iframe player api
-
-
 function YoutubeVideoPlayer(){
     //play the video when its ready
     const onPlayerReady = (event) => {
-        // console.log(event);
         const player = event.target
         player.mute()
         player.playVideo()

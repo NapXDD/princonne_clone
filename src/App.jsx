@@ -10,22 +10,22 @@ import YoutubeVideoPlayer from "./component/session/youtube/youtubeVideoPlayer";
 let offSet = 0;
 let pagePosition = 0
 
+//execute cooldown for function
+const RECHARGE_TIME = 1000;
+
+const checkPage = () => {
+  if (pagePosition <= 0) {
+    pagePosition = 0
+  } else if (pagePosition >= 3) {
+    pagePosition = 3
+  }
+}
+
 function App() {
   
   const scrollSession = useRef();
   //let [pagePosition, setPagePosition] = useState(0)
   
-  const checkPage = () => {
-    if (pagePosition <= 0) {
-      pagePosition = 0
-    } else if (pagePosition >= 3) {
-      pagePosition = 3
-    }
-  };
-
-  //execute cooldown for function
-  const RECHARGE_TIME = 1500;
-
   function changeSession() {
     
     //reading a height off a session to translate3d
@@ -33,9 +33,6 @@ function App() {
 
     //when scrollup
     if (event.deltaY < 0) {
-      console.log("scroll up");
-      //check pagePosition section
-      //setPagePosition(pagePosition--);
       pagePosition--
       checkPage();
       switch (pagePosition) {
@@ -55,8 +52,6 @@ function App() {
     }
     //when scrolldown
     else {
-      console.log("scroll down");
-      //setPagePosition(pagePosition++);
       pagePosition++
       checkPage();
       switch (pagePosition) {
