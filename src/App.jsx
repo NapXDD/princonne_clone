@@ -91,7 +91,6 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("wheel", throttledListener);
-    //return() => removeEventListener("wheel", throttledListener)
   }, []);
 
   return (
