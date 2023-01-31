@@ -24,7 +24,6 @@ const checkPage = () => {
 function App() {
   
   const scrollSession = useRef();
-  //let [pagePosition, setPagePosition] = useState(0)
   
   function changeSession() {
     
@@ -95,10 +94,10 @@ function App() {
         <YoutubeVideoPlayer />
       </div>
       <div className="wrapper" ref={scrollSession}>
-        <SessionOne />
-        <SessionTwo />
+        {/* <SessionOne />
+        <SessionTwo /> */}
         <SessionThree />
-        <SessionFour />
+        {/* <SessionFour /> */}
       </div>
     </div>
   );

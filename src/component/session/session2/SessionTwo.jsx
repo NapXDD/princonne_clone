@@ -1,10 +1,12 @@
 import s from "./SessionTwo.module.scss"
+import TwArea from "./twArea/TwArea"
+import NewsArea from "./newsArea/NewsArea"
 
 function SessionTwo(){
     return(
         <section className={s.container}>
-            <div className="news-area"></div>
-            <div className="tw-area"></div>
+            <NewsArea/>
+            <TwArea/>
         </section>
     )
 }

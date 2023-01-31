@@ -1,9 +1,9 @@
 import s from "./SessionFour.module.scss"
 
-function SessionTwo(){
+function SessionFour(){
     return(
         <section className={s.container}></section>
     )
 }
 
-export default SessionTwo
+export default SessionFour
