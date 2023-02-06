@@ -1,0 +1,28 @@
+.container{
+    background-color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.entryArea{
+    padding: 40px 0 0;
+    position: relative;
+}
+
+.entryAreaInner{
+    background: url(public/assets/session5/bg-entry.png) no-repeat center 0;
+    text-align: center;
+    padding: 135px 0 106px;
+}
+
+ul.btnStore{
+    list-style: none;
+    text-align: center;
+}
+
+.btnStore li{
+    display: inline-block;
+    margin: 0 10px;
+}
