@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import "./App.css";
 import NavBar from "./component/navbar/NavBar";
 import SessionOne from "./component/session/session1/SessionOne";
@@ -7,6 +7,8 @@ import SessionThree from "./component/session/session3/SessionThree";
 import SessionFour from "./component/session/session4/SessionFour";
 import SessionFive from "./component/session/session5/SessionFive"
 import YoutubeVideoPlayer from "./component/session/youtube/youtubeVideoPlayer";
+import LoadingIn from "./component/loading/LoadingIn/LoadingIn";
+import LoadingOut from "./component/loading/LoadingOut/LoadingOut";
 
 let offSet = 0;
 let pagePosition = 0
@@ -25,6 +27,7 @@ const checkPage = () => {
 function App() {
   
   const scrollSession = useRef();
+  const element = useRef()
   
   function changeSession() {
     
@@ -93,17 +96,19 @@ function App() {
   let throttledListener = throttle(changeSession, RECHARGE_TIME);
 
   useEffect(() => {
-    scrollSession.current.style.transform = `translate3d(0px, 0px, 0px)`;
+    //scrollSession.current.style.transform = `translate3d(0px, 0px, 0px)`;
     window.addEventListener("wheel", throttledListener);
   }, []);
 
   return (
     <div className="App">
-      <NavBar />
       <div className="youtube-wrapper">
         <YoutubeVideoPlayer />
       </div>
+      <LoadingIn />
+      <LoadingOut />
       <div className="wrapper" ref={scrollSession}>
+        <NavBar />
         <SessionOne />
         <SessionTwo />
         <SessionThree />

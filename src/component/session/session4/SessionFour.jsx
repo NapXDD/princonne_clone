@@ -3,9 +3,6 @@ import s from "./SessionFour.module.scss"
 function SessionFour(){
     return(
         <section className={s.container}>
-            {/* <div className={s.bgIMG}>
-                <img src="public\assets\session4\bg-chara.jpg" alt="session4 background" />
-            </div> */}
             <div className={s.charaInner}>
                 <h3>
                     <img src="public\assets\session4\sessionTitle\h3-chara.png" alt="session title" />
