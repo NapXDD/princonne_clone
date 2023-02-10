@@ -24,13 +24,23 @@ const checkPage = () => {
   }
 }
 
+function throttle(func, delay) {
+  var func = func.bind(func),
+    last = Date.now();
+  return function () {
+    if (Date.now() - last > delay) {
+      func();
+      last = Date.now();
+    }
+  };
+}
+
 function App() {
   
   const scrollSession = useRef();
   const element = useRef()
   
   function changeSession() {
-    
     //reading a height off a session to translate3d
     let rootHeight = scrollSession.current.clientHeight/5
 
@@ -82,16 +92,7 @@ function App() {
     }
   }
 
-  function throttle(func, delay) {
-    var func = func.bind(func),
-      last = Date.now();
-    return function () {
-      if (Date.now() - last > delay) {
-        func();
-        last = Date.now();
-      }
-    };
-  }
+
 
   let throttledListener = throttle(changeSession, RECHARGE_TIME);
 
