@@ -8,7 +8,6 @@ function LoadingOut(){
     useEffect(() => {
         window.onload = () => {
             element.current.classList.add(style['remove'])
-            console.log("lmao")
         }
     },[])
 

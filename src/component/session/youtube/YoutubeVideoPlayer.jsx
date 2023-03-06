@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import YouTube from 'react-youtube';
+import "./YoutubeVideoPlayer.css"
 
 function YoutubeVideoPlayer(){
     //play the video when its ready
@@ -22,6 +23,8 @@ function YoutubeVideoPlayer(){
     const opts = {
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
+        'width': `${window.innerWidth}`,
+        'height': `${window.innerHeight + 110}`,
         'modestbranding': 1,
         'autoplay': 0,
         'controls': 0,
@@ -40,22 +43,25 @@ function YoutubeVideoPlayer(){
         // getYoutubeAPI()
         // onYouTubeIframeAPIReady()
         const element = document.getElementById("player")
-        element.style.height = "841px"
-        element.style.width = "1495px"
+        element.style.height = `${window.innerHeight + 110}px`
+        element.style.width = `${window.innerWidth }px`
         element.style.overflow = "hidden"
-        element.style.marginTop = "-59px"
+        element.style.marginTop = "-55px"
         element.setAttribute("unselectable", "on")
-    }, [])
+ 
+    }, [])  
+
+    
 
     return(
-        <YouTube
-        className='iframe-wrapper'
-        id="player" 
-        videoId="f56t72sfe-Q" 
-        opts={opts} 
-        onReady={onPlayerReady}
-        onStateChange={onPlayerChange}
-        />
+            <YouTube
+            className='iframe-wrapper'
+            id="player" 
+            videoId="f56t72sfe-Q" 
+            opts={opts} 
+            onReady={onPlayerReady}
+            onStateChange={onPlayerChange}
+            />
     )
 }
 

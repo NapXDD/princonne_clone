@@ -38,7 +38,6 @@ function throttle(func, delay) {
 function App() {
   
   const scrollSession = useRef();
-  const element = useRef()
   
   function changeSession() {
     //reading a height off a session to translate3d
@@ -46,6 +45,7 @@ function App() {
 
     //when scrollup
     if (event.deltaY < 0) {
+      console.log(event.deltaY)
       pagePosition--
       checkPage();
       switch (pagePosition) {
@@ -92,13 +92,11 @@ function App() {
     }
   }
 
-
-
   let throttledListener = throttle(changeSession, RECHARGE_TIME);
 
   useEffect(() => {
-    //scrollSession.current.style.transform = `translate3d(0px, 0px, 0px)`;
     window.addEventListener("wheel", throttledListener);
+    console.log(window.innerHeight)
   }, []);
 
   return (
@@ -106,10 +104,11 @@ function App() {
       <div className="youtube-wrapper">
         <YoutubeVideoPlayer />
       </div>
+      <NavBar />
       <LoadingIn />
       <LoadingOut />
       <div className="wrapper" ref={scrollSession}>
-        <NavBar />
+
         <SessionOne />
         <SessionTwo />
         <SessionThree />
