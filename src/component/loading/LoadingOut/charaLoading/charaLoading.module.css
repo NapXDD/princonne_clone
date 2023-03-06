@@ -18,12 +18,12 @@
     width: 200px;
     height: 200px;
     overflow: hidden;
-    background: url(public/assets/loadingScreen/loadingAnimation/sprite01.png) no-repeat center;
+    background: url(/assets/loadingScreen/loadingAnimation/sprite01.png) no-repeat center;
     background-size: 100%;
 }
 
 #loadingChara .charaContainer.chara01{
-    background-image: url(public/assets/loadingScreen/loadingAnimation/sprite01.png);
+    background-image: url(/assets/loadingScreen/loadingAnimation/sprite01.png);
     animation: spriteAnime01 700ms steps(19) infinite
 }
 
